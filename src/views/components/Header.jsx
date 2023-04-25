@@ -1,4 +1,4 @@
-import { FormControlLabel, Switch, Typography } from "@mui/material";
+import { Box, FormControlLabel, Stack } from "@mui/material";
 import React from "react";
 import { IOSSwitch } from "../../constants/switchTheme";
 import { useDispatch } from "react-redux";
@@ -12,13 +12,15 @@ export default function Header() {
   };
 
   return (
-    <div>
+    <Box  display="flex"
+    justifyContent="space-between"
+    width="100%">
       <h1>Logo</h1>
       <FormControlLabel
         control={
           <IOSSwitch sx={{ m: 1 }} defaultChecked onChange={toggleColorTheme} />
         }
       />
-    </div>
+    </Box>
   );
 }
