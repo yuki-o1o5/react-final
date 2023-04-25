@@ -1,7 +1,7 @@
-import { Box, FormControlLabel, Stack } from "@mui/material";
+import { Box, FormControlLabel } from "@mui/material";
 import React from "react";
 import { IOSSwitch } from "../../constants/switchTheme";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeColorTheme } from "../../actions/colorThemeAction";
 
 export default function Header() {
@@ -11,10 +11,18 @@ export default function Header() {
     dispatch(changeColorTheme());
   };
 
+  const theme = useSelector((state) => state.theme);
+
   return (
-    <Box  display="flex"
-    justifyContent="space-between"
-    width="100%">
+    <Box
+      style={{
+        backgroundColor: theme.palette.background.default,
+        color: theme.palette.text.primary,
+      }}
+      display="flex"
+      justifyContent="space-between"
+      width="100%"
+    >
       <h1>Logo</h1>
       <FormControlLabel
         control={

@@ -10,13 +10,7 @@ function App() {
   const theme = useSelector((state) => state.theme);
 
   return (
-    <div
-      className="App"
-      style={{
-        backgroundColor: theme.palette.background.default,
-        color: theme.palette.text.primary,
-      }}
-    >
+    <div className="App">
       <ThemeProvider theme={theme}>
         <Header />
         <Routes>
